@@ -1,0 +1,366 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700&subset=cyrillic');
+
+/* Variables */
+$main-bg: #FBFCFC;
+
+/* Mixins */
+@mixin contDELainer {
+  .container {
+    display: flex;
+    flex-direction: column;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+}
+@mixin main-fonts {
+  font-size: 20px;
+  font-family: "Open Sans Condensed", Tahoma, serif;
+}
+@mixin heading-1 {
+  font-size: 2em;
+  font-family: "Open Sans Condensed", Tahoma, serif;
+  text-transform: uppercase;
+}
+@mixin hover-bg {
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Scaffoldings */
+body {
+  @include main-fonts;
+  background: $main-bg;
+}
+h1 {
+  margin: 0;
+  font-size: 1.3em;
+}
+a {
+  color: #2980b9;
+
+  &:hover {
+    color: #144769;
+  }
+}
+i {
+  color: rgba(0,0,0,0.5);
+}
+address {
+  font-style: normal;
+}
+
+/*@include container;*/
+
+/* Styles */
+
+/* Header
+============ */
+.page-header {
+  width: 100%;
+  margin: 0 0 50px 0;
+  padding-bottom: 0;
+  background: #2980b9;
+  color: #fff;
+  border-bottom: 0;
+  box-shadow: inset 0px -12px 16px -8px rgba(0, 0, 0, 0.2);
+
+  .row {
+    display: flex;
+    padding: 70px 0;
+
+    .gr--align {
+      margin: auto;
+    }
+  }
+
+  .main-nav {
+    margin-right: auto;
+    width: 100%;
+    margin-bottom: auto;
+    height: 50px;
+
+    .main-nav__list {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+
+      .main-nav__item--active {
+        color: #F1DC4F;
+      }
+      
+      li {
+        padding-right: 30px;
+        line-height: 50px;
+      }
+
+      a,
+      i {
+        color: #eee;
+        text-decoration: none;
+      }
+      a:hover {
+        color: #F1DC4F;
+      }
+    }
+  }
+
+  & h1 {
+    @include heading-1;
+  }
+
+  & a {
+    color: #000;
+  }
+
+  & p {
+    margin-top: 5px;
+    margin-bottom: auto;
+  }
+
+  .container {
+
+  }
+
+  .yellow-line {
+    width: 150px;
+    height: 7px;
+    margin: 20px 0;
+    background: #DED81A;
+  }
+}
+.nav-pills>li>a {
+  border-radius: 0;
+}
+
+/* Main
+========== */
+.page-main {
+  margin: 70px 15px;
+}
+
+/* News */
+.container section:first-child {
+    margin-top: 0;
+}
+.news {
+  margin: 50px 0 0 0;
+  padding: 15px 15px 15px 0;
+  background: #fff;
+  border: 1px solid #e8e8e8;
+
+  &:hover {
+    @include hover-bg;    
+  }
+  
+  .news__image {
+    padding: 15px 0 15px 15px;
+  }
+
+  .news__preview {
+    flex-grow: 1;
+    padding: 10px 10px 10px 20px;
+  }
+  .news__preview--date {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0 15px 0;
+    font-size: 0.85em;
+    color: #6F6F6F;
+  }
+  .news__preview--before-quote {
+    margin-bottom: 5px;
+  }
+  .news__preview--quote {
+    margin: 0;
+    padding: 0 5px 0 15px;
+    font-style: italic;
+    font-size: 18px;
+    border-left: 5px solid #2980B9;
+  }
+  .news__preview--more {
+    text-align: right;
+  }
+}
+
+.page-contacts,
+.page-gallery,
+.page-comments {
+  padding: 25px;
+  background: #fff;
+  border: 1px solid #ccc;
+  outline: 1px dashed #ccc;
+  outline-offset: -8px;
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.20);
+}
+
+.page-gallery {
+  padding: 25px 25px 10px 25px;
+}
+
+
+.page-about {
+  padding: 25px;
+  background: #fff;
+  border: 1px solid #ccc;
+  outline: 1px dashed #ccc;
+  outline-offset: -8px;
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.20);
+
+  .page-about__avatar {
+    width: 100%;
+    height: 100%;
+    max-width: 200px;
+    max-height: 200px;
+    margin-right: 50px;
+    border-radius: 50%;
+    box-shadow: 0 0px 11px 1px rgba(0, 0, 0, 0.15);
+  }
+}
+
+.page-comments__comment,
+.page-comments__comment-answer {
+
+  .author-name {
+    margin-bottom: 0;
+    font-size: 16px;
+    font-weight: bold;
+
+    span {
+      font-weight: normal;
+      color: #aaa;
+    }
+  }
+
+  p {
+    margin-bottom: 0;
+  }
+
+  .comment-answer {
+    font-size: 16px;
+    color: #aaa;
+  }
+}
+.page-comments__comment-answer {
+  margin: 30px 0 30px 92px;
+}
+.page-comments {
+
+  .text-comment a {
+    border-bottom: 1px solid #2980B9;
+
+    &:hover {
+      text-decoration: none;
+      border-bottom: 1px solid #000;
+    }
+  }
+}
+
+fieldset {
+  margin-top: 50px;
+  padding: 15px 20px 20px 20px;
+  border-radius: 5px;
+  border: 1px solid #AEB0B1;
+}
+
+fieldset legend {
+  width: auto;
+  margin-bottom: 0;
+  color: #AEB0B1;
+  border-bottom: 0;
+}
+.glyphicon-pencil {
+  margin-right: 5px;
+  font-size: 12px;
+  color: #fff;
+}
+
+.width-height {
+    width: 100%;
+    height: 100%;
+    margin-top: 50px;
+    padding: 50px;
+    color: #fff;
+    background: #34495e;
+    border: 10px solid #2c3e50;
+    outline: 2px dashed #ccc;
+    outline-offset: -10px;
+
+    .my--quote {
+      margin: 0 0 25px 25px;
+      padding: 0 5px 0 15px;
+      font-size: 18px;
+      border-left: 5px solid #0F2133;
+    }
+
+    .test-article {
+      width: 100%;
+      padding: 25px;
+      background: #2c3e50;
+      border: 5px dotted #0F2133;
+    }
+  }
+
+
+/* Footer
+============ */
+.page-footer {
+  width: 100%;
+  margin: 50px 0 0 0;
+  padding: 50px 0;
+  color: #bbb;
+  background: #272822;
+}
+
+
+
+/* Other Pages
+ ================ */
+.page-image {
+  background: #000;
+  color: #fff;
+}
+
+.page-image__flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 800px;
+
+  .img-big-gr {
+    margin-bottom: 20px;
+    border: 5px solid rgba(255, 255, 255, 0.9);
+  }
+}
+
+/* Comments */
+.full-comments {
+  background-image: url("/img/canoeing-bg.jpg");
+  background-position: center 20%;
+  background-size: auto;
+  background-repeat: no-repeat;
+  color: #000;
+}
+
+.full-comments__flex {
+  display: flex;
+  flex-direction: column;
+  margin-top: 100px;
+  padding: 0 20px;
+
+  .full-comments__wrapper {
+    max-width: 300px;
+    margin: auto;
+    padding: 25px;
+    background: #fff;
+    border: 1px solid #ccc;
+    outline: 1px dashed #ccc;
+    outline-offset: -8px;
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.20);
+    opacity: 0.85;
+  }
+}
+

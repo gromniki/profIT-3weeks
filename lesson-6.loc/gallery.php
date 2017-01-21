@@ -1,0 +1,94 @@
+<?php
+
+require __DIR__ . '/data.php';
+
+?>
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="robots" content="noindex,nofollow" />
+  <title>Галерея красивых картинок</title>
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+  <link rel="stylesheet" href="/css/grstyle.css">
+
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+</head>
+<body>
+  <header class="">
+    <div class="container">
+      <div class="row">
+        <nav class="col-lg-12">
+          <ul class="nav nav-pills">
+            <li role="presentation" class=""><a href="/"><i class="glyphicon glyphicon-home"></i></a></li>
+            <li role="presentation" class=""><a href="/news.html">Новости</a></li>
+            <li role="presentation" class="active"><a>Галерея</a></li>
+            <li role="presentation" class=""><a href="/contacts.html">Контакты</a></li>
+            <li role="presentation" class=""><a href="/about.html">Обо мне</a></li>
+            <li role="presentation" class=""><a href="/guestbook.php">Гостевая</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <section class="page-header">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-10 col-md-12 col-sm-12 col-xs-12 text-center  gr--align">
+            <h1>Новости мира программирования</h1>
+            <p>Изучение курса «Мой первый сайт за 3 недели» от Альберта Степанцева с сайта Академии Программирования <a href="http://pr-of-it.ru/">ProfIT</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </header>
+
+  <main class="page-main">
+    <div class="container">
+      <div class="page-gallery">
+        <section class="row">         
+          <?php
+          
+            foreach (filesList(__DIR__ . '/img/galleryBig') as $img) {
+              ?>
+                <figure class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                  <a href="/image.php?file=<?php echo $img; ?>" class="thumbnail">
+                    <img src="/img/galleryBig/<?php echo $img; ?>" alt="<?php echo $img; ?>">
+                  </a>
+                </figure>
+              <?php
+            }
+          
+          ?>            
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer class="page-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-6">
+          <p>Голубев Роман Александрович</p>
+          <address>
+            <a href="http://vk.com/gromniki" target="_blank">Страничка ВК</a><br>
+            <strong>e-mail:</strong> grom272008@yandex.ru<br>
+            <strong>skype:</strong> golubev_roman
+          </address>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6">
+          <img class="img-responsive pull-right" src="/img/snowman2.png" width="96" height="96" alt="Логотип">
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
